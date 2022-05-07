@@ -29,19 +29,7 @@
       "title": "List of selectors",
       "type": "array",
       "items": {
-        "allOf": [
-          {
-            "$ref": "#/definitions/Selector"
-          }
-        ],
-        "properties": {
-          "children": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/Selector"
-            }
-          }
-        },
+        "$ref": "#/definitions/SelectorWithChildren",
         "required": [
           "url"
         ]
@@ -114,6 +102,21 @@
         "uuid",
         "name"
       ]
+    },
+    "SelectorWithChildren": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Selector"
+        }
+      ],
+      "properties": {
+        "children": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Selector"
+          }
+        }
+      }
     }
   }
 }
