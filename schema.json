@@ -57,6 +57,17 @@
     "selectors"
   ],
   "definitions": {
+    "SelectorType": {
+      "type": "string",
+      "enum": [
+        "css",
+        "xpath",
+        "text",
+        "re",
+        "jsonpath",
+        "jmespath"
+      ]
+    },
     "Selector": {
       "type": "object",
       "properties": {
@@ -64,15 +75,7 @@
           "type": "string"
         },
         "type": {
-          "type": "string",
-          "enum": [
-            "css",
-            "xpath",
-            "text",
-            "re",
-            "jsonpath",
-            "jmespath"
-          ]
+          "$ref": "#/definitions/SelectorType"
         },
         "url": {
           "type": "string"
@@ -103,6 +106,54 @@
               ]
             }
           ]
+        },
+        "conditions": {
+          "type": "array",
+          "description": "Required conditions using OR operation.",
+          "items": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "hasText": {
+                    "type": "string"
+                  },
+                  "hasTexts": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "hasAttribute": {
+                    "type": "object",
+                    "maxProperties": 1
+                  },
+                  "hasAttributes": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "maxProperties": 1
+                    }
+                  },
+                  "hasChildren": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "selector": {
+                          "type": "string"
+                        },
+                        "type": {
+                          "$ref": "#/definitions/SelectorType"
+                        }
+                      }
+                    }
+                  }
+                },
+                "additionalProperties": false
+              }
+            ]
+          }
         }
       },
       "required": [
