@@ -11,10 +11,12 @@ selectors:
     uuid: 679541e0-c50f-4981-9da1-015edd0f4bfe
     name: Result
     children:
-      - selector: a::attr(href)
+      - selector: a
         type: css
         name: URL
         uuid: 0a3cc456-4563-404e-8b92-da1c8a2b870b
+        extract:
+          attrib: href
       - selector: h3:nth-child(2)
         type: css
         name: Title
