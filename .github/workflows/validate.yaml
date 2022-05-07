@@ -11,4 +11,4 @@ jobs:
         uses: cardinalby/schema-validator-action@1.1.0
         with:
           schema: schema.json
-          file: selectors/*.yaml
+          file: recipes/*.yaml

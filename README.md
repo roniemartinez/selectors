@@ -1,6 +1,6 @@
 # Selectors
 
-Open source selectors
+Open source selectors that can be used for Web Scraping
 
 ## Why?
 
