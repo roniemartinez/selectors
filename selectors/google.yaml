@@ -1,0 +1,27 @@
+author: Ronie Martinez
+title: Google Search
+uuid: 2e88220c-978f-4131-8b2d-8d0d684eb4f
+description: Selectors for Google Search results
+version: 1
+
+selectors:
+  - selector: .g
+    type: css
+    url: "*google.com/search*"
+    uuid: 679541e0-c50f-4981-9da1-015edd0f4bfe
+    name: Result
+    children:
+      - selector: a::attr(href)
+        type: css
+        name: URL
+        uuid: 0a3cc456-4563-404e-8b92-da1c8a2b870b
+      - selector: h3:nth-child(2)
+        type: css
+        name: Title
+        uuid: 221d8492-18d6-4a8b-8693-119dc7f01066
+        extract: innerHTML
+      - selector: div[style='-webkit-line-clamp\\3A 2']
+        type: css
+        name: Description
+        uuid: e228e55a-ae0b-4230-99f1-05e6a5083f08
+        extract: innerHTML

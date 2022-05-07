@@ -1,0 +1,14 @@
+name: Validate YAML
+
+on: pull_request
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Validate JSON Schemas
+        uses: walbo/validate-json@v1.1.0
+        with:
+          schema: schema.json
+          files: selectors/*.yaml
