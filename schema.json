@@ -29,7 +29,19 @@
       "title": "List of selectors",
       "type": "array",
       "items": {
-        "$ref": "#/definitions/Selector",
+        "allOf": [
+          {
+            "$ref": "#/definitions/Selector"
+          }
+        ],
+        "properties": {
+          "children": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Selector"
+            }
+          }
+        },
         "required": [
           "url"
         ]
@@ -93,12 +105,6 @@
               ]
             }
           ]
-        },
-        "children": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Selector"
-          }
         }
       },
       "additionalProperties": false,
