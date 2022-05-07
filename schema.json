@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "$id": "https://github.com/roniemartinez/selectors/schema.json",
+  "title": "Open Source Selectors",
+  "markdownDescription": "Recipes",
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "integer"
+    },
+    "title": {
+      "title": "Title",
+      "type": "string"
+    },
+    "author": {
+      "title": "Author",
+      "type": "string"
+    },
+    "uuid": {
+      "title": "Unique Identifier",
+      "type": "string",
+      "format": "uuid"
+    },
+    "description": {
+      "title": "Description",
+      "type": "string"
+    },
+    "selectors": {
+      "title": "List of selectors",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Selector",
+        "required": [
+          "url"
+        ]
+      },
+      "minItems": 1
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "author",
+    "title",
+    "uuid",
+    "description",
+    "version",
+    "selectors"
+  ],
+  "definitions": {
+    "Selector": {
+      "type": "object",
+      "properties": {
+        "selector": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "css",
+            "xpath",
+            "text",
+            "re",
+            "jsonpath",
+            "jmespath"
+          ]
+        },
+        "url": {
+          "type": "string"
+        },
+        "uuid": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "name": {
+          "type": "string"
+        },
+        "extract": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "attrib": {
+                  "type": "string"
+                }
+              }
+            },
+            {
+              "type": "string",
+              "enum": [
+                "outerHTML",
+                "innerHTML",
+                "innerText"
+              ]
+            }
+          ]
+        },
+        "children": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Selector"
+          }
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "selector",
+        "type",
+        "uuid",
+        "name"
+      ]
+    }
+  }
+}
