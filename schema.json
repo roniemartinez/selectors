@@ -29,8 +29,23 @@
       "title": "List of selectors",
       "type": "array",
       "items": {
-        "$ref": "#/definitions/SelectorWithChildren",
+        "allOf": [
+          {
+            "$ref": "#/definitions/Selector"
+          }
+        ],
+        "properties": {
+          "children": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Selector",
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false,
         "required": [
+          "children",
           "url"
         ]
       },
@@ -95,28 +110,12 @@
           ]
         }
       },
-      "additionalProperties": false,
       "required": [
         "selector",
         "type",
         "uuid",
         "name"
       ]
-    },
-    "SelectorWithChildren": {
-      "allOf": [
-        {
-          "$ref": "#/definitions/Selector"
-        }
-      ],
-      "properties": {
-        "children": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Selector"
-          }
-        }
-      }
     }
   }
 }
