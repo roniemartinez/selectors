@@ -30,6 +30,16 @@
       "type": "array",
       "items": {
         "$ref": "#/definitions/Selector",
+        "properties": {
+          "children": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Selector",
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false,
         "required": [
           "url"
         ]
@@ -93,15 +103,8 @@
               ]
             }
           ]
-        },
-        "children": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Selector"
-          }
         }
       },
-      "additionalProperties": false,
       "required": [
         "selector",
         "type",
