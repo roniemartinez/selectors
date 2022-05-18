@@ -1,0 +1,29 @@
+author: Ronie Martinez
+title: DuckDuckGo Search
+uuid: ee82b430-f298-4331-87de-b0e59d2ae2dc
+description: Selectors for DuckDuckGo Search results
+version: 1
+
+selectors:
+  - selector: article[data-testid=result]
+    type: css
+    url: "*duckduckgo.com/*"
+    uuid: 67cbebb6-e7a7-41a9-9ec9-b6b86a068c7b
+    name: Result
+    children:
+      - selector: a[data-testid=result-title-a]
+        type: css
+        name: URL
+        uuid: 8ac15e26-8c3b-43d9-9417-f355036046aa
+        extract:
+          attrib: href
+      - selector: a[data-testid=result-title-a] span
+        type: css
+        name: Title
+        uuid: a03b2ff6-3725-4b8b-847e-59bc2c2c0e64
+        extract: innerHTML
+      - selector: div:nth-child(3) span
+        type: css
+        name: Description
+        uuid: 42881de7-7623-460b-b096-c94c28258c13
+        extract: innerHTML
