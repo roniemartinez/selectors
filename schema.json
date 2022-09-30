@@ -8,8 +8,8 @@
     "version": {
       "type": "integer"
     },
-    "title": {
-      "title": "Title",
+    "name": {
+      "title": "Name",
       "type": "string"
     },
     "author": {
@@ -50,7 +50,7 @@
   "additionalProperties": false,
   "required": [
     "author",
-    "title",
+    "name",
     "uuid",
     "description",
     "version",
