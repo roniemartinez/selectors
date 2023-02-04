@@ -27,3 +27,7 @@ selectors:
         name: Description
         uuid: 42881de7-7623-460b-b096-c94c28258c13
         extract: innerHTML
+
+downloads:
+  mimetypes:
+    - image/*

@@ -45,6 +45,27 @@
         ]
       },
       "minItems": 1
+    },
+    "downloads": {
+      "title": "Download files based on URL or mimetype",
+      "type": "object",
+      "items": {
+        "type": "object",
+        "properties": {
+          "urls": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "mimetypes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
     }
   },
   "additionalProperties": false,
