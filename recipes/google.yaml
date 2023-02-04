@@ -33,5 +33,7 @@ selectors:
         extract: innerHTML
 
 downloads:
-  mimetypes:
-    - image/*
+  - mimetypes:
+      - image/*
+    urls:
+      - "*.gstatic.com/images*"

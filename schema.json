@@ -48,7 +48,7 @@
     },
     "downloads": {
       "title": "Download files based on URL or mimetype",
-      "type": "object",
+      "type": "array",
       "items": {
         "type": "object",
         "properties": {
@@ -64,7 +64,11 @@
               "type": "string"
             }
           }
-        }
+        },
+        "required": [
+          "urls",
+          "mimetypes"
+        ]
       }
     }
   },
