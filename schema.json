@@ -86,6 +86,7 @@
     "uuid",
     "description",
     "version",
+    "allowed_domains",
     "selectors"
   ],
   "definitions": {
