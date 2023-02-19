@@ -4,6 +4,10 @@ uuid: 89df44b4-0eed-4043-9e44-e25f6a523190
 description: Selectors for Bing Search results
 version: 1
 
+allowed_domains:
+  - "bing.com"
+  - "*.bing.com"
+
 selectors:
   - selector: .b_algo
     type: css
