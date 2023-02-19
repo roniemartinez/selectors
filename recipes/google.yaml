@@ -4,6 +4,10 @@ uuid: bdb46409-5501-4cac-af3c-617c1e6a3336
 description: Selectors for Google Search results
 version: 1
 
+allowed_domains:
+  - "google.com"
+  - "*.gstatic.com"
+
 selectors:
   - selector: .g
     type: css

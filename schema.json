@@ -25,6 +25,13 @@
       "title": "Description",
       "type": "string"
     },
+    "allowed_domains": {
+      "title": "Allowed domains",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
     "selectors": {
       "title": "List of selectors",
       "type": "array",
